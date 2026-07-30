@@ -1,5 +1,17 @@
 
-// Funçao Map
+// Funçao Map (exemplo)
+
+const numeros = [1,2,3,4,5];
+const dobro = numeros.map(n => n * 2);
+console.log(dobro);
+
+// ### Exercícios de Fixação (Arrays Avançados)
+
+// **Desafio 1:** Crie um array chamado `precos` com os valores `[10, 20, 30]`. Use o método `map()` para criar um novo array chamado `precosComDesconto`, onde cada valor seja o preço original multiplicado por 0.9 (simulando um desconto de 10%). Imprima o novo array no console.
+
+const precos = [10, 20, 30]; // Array com os preços originais
+const precosComDesconto = precos.map(precos => precos * 0.9); // Usa map para aplicar o desconto
+console.log(precosComDesconto);
 
 
 function mostrarResultado(){
@@ -32,6 +44,6 @@ function mostrarResultado(){
         <strong>Explicação:</strong> A função <strong><code style= color:blue>map()</code></strong> 
         é usada para percorrer cada item de um array e aplicar uma transformação nele.
         <br>Ela retorna um novo array com os resultados. 
-        <br> <br> Neste exemplo, usamos o <strong><code style= color:blue>map()</code></strong> para criar frases que indicam a posição de cada nome na lista.`;
-
+        <br> <br> Neste exemplo, usamos o <strong><code style= color:blue>map()</code></strong> para criar frases que indicam a posição de cada nome na lista. <br> Observer na imagem abaixo como o <strong><code style= color:blue>map()</code></strong> percorre cada item do array e aplica a função que criamos, retornando um novo array com as frases formatadas. <br> <br> <img src="" alt="Exemplo de uso da função map em JavaScript">`;
+    
 }
