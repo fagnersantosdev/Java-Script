@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objetos em JavaScript</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 2rem;
+            line-height: 1.6;
+            padding: 0;
+        }
+
+        pre {
+            background: #f4f4f4;
+            padding: 1rem;
+            border-radius: 6px;
+        }
+
+        code {
+            color: #3613d1;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Objetos em JavaScript</h1>
+    <p>Em JavaScript, objetos são coleções de propriedades. Cada propriedade é uma chave e um valor. <br>Objetos permitem agrupar dados relacionados e funções que operam nesses dados.</p>
+
+    <h2>Exemplo de objeto</h2>
+    <pre><code>const pessoa = {
+  nome: 'Ana',
+  idade: 28,
+  profissao: 'Desenvolvedora',
+  saudacao: function() {
+    return `Olá, meu nome é ${this.nome}`;
+  }
+};
+
+console.log(pessoa.nome);        // Ana
+console.log(pessoa.idade);       // 28
+console.log(pessoa.saudacao());  // Olá, meu nome é Ana</code></pre>
+
+    <h2>Acessando e alterando propriedades</h2>
+    <p>Você pode acessar propriedades com <code>pessoa.nome</code> ou <code>pessoa['nome']</code>. Também pode adicionar
+        ou atualizar valores.</p>
+    <pre><code>pessoa.idade = 29;
+pessoa.email = 'ana@email.com';
+
+console.log(pessoa.idade); // 29
+console.log(pessoa.email); // ana@email.com</code></pre>
+
+    <h2>Objetos como parâmetros</h2>
+    <p>Funções podem receber objetos e usar suas propriedades.</p>
+    <pre><code>function apresentar(usuario) {
+  return `Nome: ${usuario.nome}, Profissão: ${usuario.profissao}`;
+}
+
+console.log(apresentar(pessoa));</code></pre>
+
+    <h2>Resumo</h2>
+    <p>Objetos são estruturas fundamentais em JavaScript. Eles permitem representar entidades reais com propriedades e
+        métodos, facilitando a organização e reutilização de código.</p>
+</body>
+
+</html>
