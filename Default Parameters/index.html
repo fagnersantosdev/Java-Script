@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Default Parameters</title>
+    <script src="script.js" defer></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 2rem;
+            line-height: 1.6;
+            padding: 0;
+        }
+
+        pre {
+            background: #f4f4f4;
+            padding: 1rem;
+            border-radius: 6px;
+        }
+
+        code {
+            color: #3613d1;
+        }
+
+        ul {
+            list-style-type: disc;
+            padding-left: 1.5rem;
+        }
+
+        h1 {
+            background-color: #f4f4f4;
+            padding: 1rem;
+            border-radius: 6px;
+        }
+
+        h2 {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>Default Parameters</h1>
+    <p>Default Parameters ou Parâmetros Padrão são uma funcionalidade do JavaScript que permite definir valores padrão para os parâmetros de uma função. Isso significa que, se um argumento não for fornecido ao chamar a função, o parâmetro assumirá o valor padrão definido.</p>
+    <p>Exemplo de função com parâmetros padrão:</p>
+    <pre><code>
+        function saudacao(nome = "Visitante") {
+            return `Olá, ${nome}!`;
+        }
+        
+        console.log(saudacao()); // Saída: Olá, Visitante!
+        console.log(saudacao("João")); // Saída: Olá, João!
+    </code></pre>
+
+    <p>Exemplo de função com múltiplos parâmetros padrão:</p>
+    <pre><code>
+        function criarUsuario(nome = "Anônimo", idade = 18) {
+            return { nome, idade };
+        }
+        
+        console.log(criarUsuario()); // Saída: { nome: 'Anônimo', idade: 18 }
+        console.log(criarUsuario("Maria", 25)); // Saída: { nome: 'Maria', idade: 25 }
+    </code></pre>
+
+    <h2>Contudo, vemos como é simples de entender o conceito de parâmetros padrão.</h2>
+</body>
+</html>

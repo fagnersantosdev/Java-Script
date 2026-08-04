@@ -29,6 +29,16 @@
             list-style-type: disc;
             padding-left: 1.5rem;
         }
+
+        h1 {
+            background-color: #f4f4f4;
+            padding: 1rem;
+            border-radius: 6px;
+        }
+
+        h2 {
+            color: #333;
+        }
     </style>
 </head>
 <body>
@@ -63,17 +73,20 @@
 
         <pre><code>
             const produto = "Notebook"; // String
+            const categoria = ["Informática", "Eletrônicos"]; // Array
+            const especificacoes = { processador: "Intel i7", ram: "16GB", armazenamento: "512GB SSD" }; // Object
+            <br>
             let preco = 2999.99; // Number
             let emEstoque = true; // Boolean
             let detalhes = { marca: "Dell", modelo: "Inspiron" }; // Object
             let coresDisponiveis = ["Preto", "Prata", "Cinza"]; // Array
             let desconto = null; // Null
             let avaliações = undefined; // Undefined
-            const categoria = ["Informática", "Eletrônicos"]; // Array
-            const especificacoes = { processador: "Intel i7", ram: "16GB", armazenamento: "512GB SSD" }; // Object
+            
         </code></pre>
 
-        <p>Neste exemplo, temos diferentes tipos de dados sendo utilizados para representar informações sobre um produto. Cada tipo de dado tem suas próprias características e usos específicos.</p>
+        <p>Neste exemplo, temos diferentes tipos de dados sendo utilizados para representar informações sobre um produto. Cada tipo de dado tem suas próprias características e usos específicos. <br>
+        Note que para cada tipo de dado, temos uma maneira específica de declará-lo e utilizá-lo no código. <pre><code>const</code></pre> São para valores que não mudam, enquanto <pre><code>let</code></pre> São para valores que podem ser alterados.</p>
         <p>Você pode ver este código também executando o console log desta página.</p>
 
     </div>
