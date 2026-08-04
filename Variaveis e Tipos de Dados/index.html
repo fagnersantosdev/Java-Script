@@ -6,22 +6,35 @@
     <link rel="stylesheet" href="style.css">
     <title>Variaveis e seus tipos de dados</title>
     <script src="script.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 2rem;
+            line-height: 1.6;
+            padding: 0;
+        }
+
+        pre {
+            background: #f4f4f4;
+            padding: 1rem;
+            border-radius: 6px;
+        }
+
+        code {
+            color: #3613d1;
+
+        }
+
+        ul {
+            list-style-type: disc;
+            padding-left: 1.5rem;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h1 style="display: flex; align-items: center; justify-content: center; height: 10vh; ">Variáveis e seus tipos de dados em JavaScript</h1>
-        <nav style="display: flex; align-items: center; justify-content: left; height: 10vh;">
-            <ul style="display: flex; align-items: center; justify-content: left; height: 10vh; list-style-type: none; margin: 0; padding: 0;">
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="../Variaveis%20e%20Tipos%20de%20Dados/index.html">Variáveis e Tipos de Dados</a></li>
-                <li><a href="../Funcoes/index.html">Funções</a></li>
-                <li><a href="../Objetos/index.html">Objetos</a></li>
-                <li><a href="../Arrays/index.html">Arrays</a></li>
-                <li><a href="../Eventos/index.html">Eventos</a></li>
-                <li><a href="../Manipulacao%20DOM/index.html">Manipulação do DOM</a></li>
-            </ul>
-        </nav>
-    
+        <h1>Variáveis e seus tipos de dados em JavaScript</h1>
+
     </header>
 
     <div class="container">
@@ -46,8 +59,22 @@
         </ul>
 
         <p>É importante entender os tipos de dados em JavaScript, pois eles determinam como os valores podem ser manipulados e utilizados no código.</p>
-        <p> Veja o exemplo abaixo na imagem:</p>
-        <img src="img/variaveis.png" alt="Exemplo de variáveis e tipos de dados em JavaScript">
+        <p> Veja o exemplo abaixo:</p>
+
+        <pre><code>
+            const produto = "Notebook"; // String
+            let preco = 2999.99; // Number
+            let emEstoque = true; // Boolean
+            let detalhes = { marca: "Dell", modelo: "Inspiron" }; // Object
+            let coresDisponiveis = ["Preto", "Prata", "Cinza"]; // Array
+            let desconto = null; // Null
+            let avaliações = undefined; // Undefined
+            const categoria = ["Informática", "Eletrônicos"]; // Array
+            const especificacoes = { processador: "Intel i7", ram: "16GB", armazenamento: "512GB SSD" }; // Object
+        </code></pre>
+
+        <p>Neste exemplo, temos diferentes tipos de dados sendo utilizados para representar informações sobre um produto. Cada tipo de dado tem suas próprias características e usos específicos.</p>
+        <p>Você pode ver este código também executando o console log desta página.</p>
 
     </div>
 

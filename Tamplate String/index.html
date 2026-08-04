@@ -3,10 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Template Strings</title>
     <script src="script.js"></script>
+    
+    <style>
+            body {
+            font-family: Arial, sans-serif;
+            margin: 2rem;
+            line-height: 1.6;
+            padding: 0;
+        }
+
+        pre {
+            background: #f4f4f4;
+            padding: 1rem;
+            border-radius: 6px;
+        }
+
+        code {
+            color: #3613d1;
+        }
+
+        ul {
+            list-style-type: disc;
+            padding-left: 1.5rem;
+        }
+        
+    </style>
 </head>
 <body>
+    <h1>Template Strings</h1>
+
+        <h2>O que são Template Strings?</h2>
+        <p>Template Strings são uma forma de trabalhar com strings em JavaScript usando crase (`) em vez de aspas. Elas permitem interpolação de variáveis e expressões.</p>
+        
+        <h3>Exemplo 1: Interpolação Básica</h3>
+        <pre><code>
+            const nome = "João";
+            const idade = 30;
+            
+            const mensagem = `Olá, meu nome é ${nome} e tenho ${idade} anos.`;
+            
+            console.log(mensagem); // Saída: Olá, meu nome é João e tenho 30 anos.
+        </code></pre>
+        <p>Neste exemplo, usamos `${}` para inserir as variáveis `nome` e `idade` dentro da string.</p>
+        
+        <h3>Exemplo 2: Expressões</h3>
+        <pre><code>
+            const a = 10;
+            const b = 5;
+            const resultado = `A soma de ${a} + ${b} é ${a + b}`;
+            console.log(resultado); // Saída: A soma de 10 + 5 é 15
+        </code></pre>
+        <p>Neste exemplo, usamos `${}` para inserir expressões dentro da string.</p>
+        <h3>Exemplo 3: Strings Multilinhas</h3>
+        <pre><code>
+            const multilinhas = 
+            `Linha 1
+            Linha 2
+            Linha 3`;
+            console.log(multilinhas);
+        </code></pre>
+        <p>Neste exemplo, usamos crases para criar strings multilinhas.</p>
+        <h3>Exemplo 4: Funções com Template Strings</h3>
+        <pre><code>
+            function saudacao(usuario) {
+                return `Bem-vindo, ${usuario}! Seu acesso foi registrado.`;
+            }
+            const usuario = "Maria";
+            const msg = saudacao(usuario);
+            console.log(msg);
+        </code></pre>
+        <p>Neste exemplo, usamos template strings dentro de uma função para criar uma mensagem de saudação personalizada.</p>
     
+        <h2>Conclusão</h2>
+        <p>Template strings são uma ferramenta poderosa em JavaScript que facilitam a manipulação de strings e a interpolação de variáveis e expressões.</p>
 </body>
 </html>
