@@ -22,6 +22,7 @@
 
         code {
             color: #3613d1;
+            font-family: 'Courier New', Courier, monospace;
         }
 
         ul {
@@ -42,7 +43,7 @@
 </head>
 <body>
     <h1>Default Parameters</h1>
-    <p>Default Parameters ou Parâmetros Padrão são uma funcionalidade do JavaScript que permite definir valores padrão para os parâmetros de uma função. Isso significa que, se um argumento não for fornecido ao chamar a função, o parâmetro assumirá o valor padrão definido.</p>
+    <p><strong>Default Parameters</strong> ou <strong>Parâmetros Padrão</strong> são uma funcionalidade do JavaScript que permite definir valores padrão para os parâmetros de uma função. Isso significa que, se um argumento não for fornecido ao chamar a função, o parâmetro assumirá o valor padrão definido.</p>
     <p>Exemplo de função com parâmetros padrão:</p>
     <pre><code>
         function saudacao(nome = "Visitante") {
@@ -53,16 +54,41 @@
         console.log(saudacao("João")); // Saída: Olá, João!
     </code></pre>
 
-    <p>Exemplo de função com múltiplos parâmetros padrão:</p>
+    <h2>Como os Parâmetros Padrão Funcionam</h2>
+    <p>Quando uma função é chamada, o JavaScript verifica se os argumentos foram fornecidos. Se um argumento não for passado, o valor padrão definido para aquele parâmetro será usado. Isso permite que as funções sejam chamadas com menos argumentos, tornando o código mais limpo e fácil de ler.</p>
+
+    <h2>Mas eles fazem mesmo a diferença?</h2>
+    <p>Sim, os parâmetros padrão fazem uma grande diferença na escrita e manutenção do código. Eles permitem que as funções sejam mais flexíveis e fáceis de usar, sem a necessidade de verificar se os argumentos foram passados. Num ponto de vista podemos até pensar que tanto faz ou é apenas algo para lembrar de passar os argumentos. Mas se não usarmos os parâmetros padrão, a função é definida como undefined e precisamos escrever mais código para lidar com valores indefinidos.</p>
+    <p>Por exemplo, sem parâmetros padrão:</p>
     <pre><code>
-        function criarUsuario(nome = "Anônimo", idade = 18) {
-            return { nome, idade };
+        function calcularDesconto(preco, desconto) {
+            return preco - desconto;
         }
-        
-        console.log(criarUsuario()); // Saída: { nome: 'Anônimo', idade: 18 }
-        console.log(criarUsuario("Maria", 25)); // Saída: { nome: 'Maria', idade: 25 }
+
+        // O programador esqueceu de passar o valor do desconto!
+        const valorFinal = calcularDesconto(100); 
+
+        console.log(valorFinal); 
+        // Resultado: NaN (Not a Number - Não é um número)
+        // Por que? Porque o JavaScript tentou fazer: 100 - undefined
+        }
+        </code></pre>
+
+    <p>Se esse NaN for parar na tela do usuário ou no banco de dados, você tem um bug chato para resolver. Antigamente, para evitar isso, nós tínhamos que encher o código de ifs (ex: if (desconto === undefined) { desconto = 0; }).</p>    
+    <p><strong>A solução: Default Parameters</strong><br>O ES6+ trouxe os parâmetros padrão justamente para resolver isso de forma elegante. Você já define a "rota de fuga" direto na criação da função.  </p>
+    <pre><code>
+        // Se ninguém passar o desconto, ele assume que é 0
+        function calcularDesconto(preco, desconto = 0) {
+            return preco - desconto;
+        }
+
+        const valorFinal = calcularDesconto(100); 
+
+        console.log(valorFinal); 
+        // Resultado: 100
+        // O código continuou funcionando perfeitamente!
     </code></pre>
 
-    <h2>Contudo, vemos como é simples de entender o conceito de parâmetros padrão.</h2>
+    <p>Contudo, vemos como é simples de entender o conceito de parâmetros padrão.</p>
 </body>
 </html>

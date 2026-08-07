@@ -3,10 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Rest Operator</title>
     <script src="script.js"></script>
 </head>
 <body>
-    
+    <h1>Rest Operator</h1>
+    <p>O <strong>Rest Operator</strong> é uma funcionalidade do Java 
+    Script que permite agrupar um número indefinido de argumentos em um único array. Ele é representado por três pontos (...), seguido do nome do parâmetro que irá receber os valores. Costuma confundir muita gente no início. O motivo da confusão é que ele usa exatamente a mesma sintaxe do Spread Operator: os três pontinhos (...).</p>
+    <p>Mas a função deles é o exato oposto um do outro. 
+    O <strong>Spread Operator</strong> "espalha" os elementos de um array ou objeto, enquanto o <strong>Rest Operator</strong> "agrupa" os elementos em um array. A diferença é sutil, mas importante.
+    </p>
+
+    <h2>O problema: Funções Limitadas</h2>
+    <p> Imagine que você quer criar uma função para somar números. Se você fizer do jeito tradicional, você fica preso à quantidade de parâmetros que definiu:</p>
+
+    <pre><code>
+        function somar(a, b) {
+        return a + b;
+    }
+
+    console.log(somar(10, 5)); // Funciona: 15
+    console.log(somar(10, 5, 8, 20)); // O JavaScript ignora o 8 e o 20. O resultado ainda é 15.
+    </code></pre>
+
+    <p>E se você quiser que a sua função seja capaz de somar 2 números, 5 números, ou 100 números, sem precisar criar dezenas de parâmetros?</p>
+
+    <h2>A Solução: O Rest Operator</h2>
+    <p>Colocando os três pontinhos no parâmetro da função, você diz ao JavaScript: "Pegue todos os argumentos que forem passados na chamada dessa função e guarde-os dentro de um array chamado nums".</p>
+
+    <pre><code>
+        function somarTudo(...numeros) {
+        // "numeros" agora é um array de verdade com todos os valores que chegaram!
+        console.log("Valores recebidos:", numeros);
+        
+        // Como é um array, podemos usar métodos de array (como o reduce, que soma tudo)
+        let total = 0;
+        for (let numero of numeros) {
+            total += numero;
+        }
+        return total;
+    }
+
+    console.log(somarTudo(10, 5)); // O array será [10, 5] -> Retorna 15
+    console.log(somarTudo(10, 5, 8, 20)); // O array será [10, 5, 8, 20] -> Retorna 43
+    console.log(somarTudo(1, 1, 1, 1, 1, 1, 1)); // O array terá 7 itens -> Retorna 7</code>
+
+    <p>Exemplo de função utilizando o Rest Operator:</p>
+    <pre><code>
+        function soma(...numeros) { // O parâmetro "numeros" irá receber todos os argumentos passados para a função
+            return numeros.reduce((total, numero) => total + numero, 0); 
+            // A função reduce é utilizada para somar todos os elementos do array "numeros"
+        }
+        
+        console.log(soma(1, 2, 3)); // Saída: 6
+        console.log(soma(4, 5)); // Saída: 9
+        console.log(soma(10)); // Saída: 10
+    </code></pre>
+    <h2>Como o Rest Operator Funciona?</h2>
+    <p>Quando uma função é chamada, o Rest Operator permite que todos os argumentos passados sejam agrupados em um único array. Isso é útil quando não sabemos quantos argumentos serão fornecidos, tornando a função mais flexível e reutilizável.</p>
+    <h2>Mas ele faz mesmo a diferença?</h2>
+    <p>O Rest Operator pode fazer uma grande diferença ao tornar as funções mais flexíveis e reutilizáveis, especialmente quando o número de argumentos pode variar.</p>
 </body>
 </html>
