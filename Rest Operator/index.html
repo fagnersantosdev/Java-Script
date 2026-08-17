@@ -5,11 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rest Operator</title>
     <script src="script.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 2rem;
+            line-height: 1.6;
+            padding: 0;
+        }
+
+        pre {
+            background: #f4f4f4;
+            padding: 1rem;
+            border-radius: 6px;
+        }
+
+        code {
+            color: #3613d1;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        ul {
+            list-style-type: disc;
+            padding-left: 1.5rem;
+        }
+
+        h1 {
+            background-color: #f4f4f4;
+            padding: 1rem;
+            border-radius: 6px;
+        }
+
+        h2 {
+            color: #333;
+        }
+    </style>
 </head>
 <body>
     <h1>Rest Operator</h1>
     <p>O <strong>Rest Operator</strong> é uma funcionalidade do Java 
-    Script que permite agrupar um número indefinido de argumentos em um único array. Ele é representado por três pontos (...), seguido do nome do parâmetro que irá receber os valores. Costuma confundir muita gente no início. O motivo da confusão é que ele usa exatamente a mesma sintaxe do Spread Operator: os três pontinhos (...).</p>
+    Script que permite <strong>agrupar um número indefinido de argumentos</strong> em um único array. Ele é representado por três pontos (...), seguido do nome do parâmetro que irá receber os valores. Costuma confundir muita gente no início. O motivo da confusão é que ele usa exatamente a mesma sintaxe do Spread Operator: os três pontinhos (...).</p>
     <p>Mas a função deles é o exato oposto um do outro. 
     O <strong>Spread Operator</strong> "espalha" os elementos de um array ou objeto, enquanto o <strong>Rest Operator</strong> "agrupa" os elementos em um array. A diferença é sutil, mas importante.
     </p>
@@ -46,9 +80,10 @@
 
     console.log(somarTudo(10, 5)); // O array será [10, 5] -> Retorna 15
     console.log(somarTudo(10, 5, 8, 20)); // O array será [10, 5, 8, 20] -> Retorna 43
-    console.log(somarTudo(1, 1, 1, 1, 1, 1, 1)); // O array terá 7 itens -> Retorna 7</code>
+    console.log(somarTudo(1, 1, 1, 1, 1, 1, 1)); // O array terá 7 itens -> Retorna 7</code></pre>
 
     <p>Exemplo de função utilizando o Rest Operator:</p>
+
     <pre><code>
         function soma(...numeros) { // O parâmetro "numeros" irá receber todos os argumentos passados para a função
             return numeros.reduce((total, numero) => total + numero, 0); 
@@ -59,9 +94,28 @@
         console.log(soma(4, 5)); // Saída: 9
         console.log(soma(10)); // Saída: 10
     </code></pre>
-    <h2>Como o Rest Operator Funciona?</h2>
     <p>Quando uma função é chamada, o Rest Operator permite que todos os argumentos passados sejam agrupados em um único array. Isso é útil quando não sabemos quantos argumentos serão fornecidos, tornando a função mais flexível e reutilizável.</p>
-    <h2>Mas ele faz mesmo a diferença?</h2>
+
+    <h2>Outro uso comum: Separando o "Resto" na Desestruturação</h2>
+    <p>Podemos também usar o Rest Operator junto com o Destructuring (que vimos há pouco) para separar uma parte de um objeto ou array e guardar "o resto" em outra variável.</p>
+
+    <pre>
+        <code>
+            const usuario = {
+            nome: "Carlos",
+            idade: 28,
+            cidade: "Rio de Janeiro",
+            profissao: "Dev"
+        };
+
+        // Tiramos apenas o nome. Todo o resto das propriedades vai para a variável "restoDosDados"
+        const { nome, ...restoDosDados } = usuario;
+
+        console.log(nome); // "Carlos"
+        console.log(restoDosDados); // { idade: 28, cidade: "Rio de Janeiro", profissao: "Dev" }
+    </code>
+</pre>
+    <h2>Conclusão</h2>
     <p>O Rest Operator pode fazer uma grande diferença ao tornar as funções mais flexíveis e reutilizáveis, especialmente quando o número de argumentos pode variar.</p>
 </body>
 </html>

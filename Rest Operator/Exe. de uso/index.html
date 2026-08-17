@@ -3,10 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Rest Operator</title>
     <script src="script.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 2rem;
+            line-height: 1.6;
+            padding: 0;
+        }
+
+        pre {
+            background: #f4f4f4;
+            padding: 1rem;
+            border-radius: 6px;
+        }
+
+        code {
+            color: #3613d1;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        ul {
+            list-style-type: disc;
+            padding-left: 1.5rem;
+        }
+
+        h1 {
+            background-color: #f4f4f4;
+            padding: 1rem;
+            border-radius: 6px;
+        }
+
+        h2 {
+            color: #333;
+            background-color: #f4f4f4;
+        }
+    </style>
 </head>
 <body>
+    <h2>Rest Operator (...)</h2>
+    <pre><code>
+        function sorteador(...numeros){
+            const numeroGerado = Math.floor ( Math.random() * numeros.length );
+            console.log("O número gerado foi: " + numeroGerado);
+        }
+
+        sorteador(1,2,3,4,5,6,7,8,9);
+    </code></pre>
+    <p>Neste exemplo vemos um sorteio de números aleatórios, que acontece através da função RAMDOM: responsável por gerarum número aleatório. Já a finçao FLOOR, faz com que os números aleatórios não apareçam os seus decimais.</p>
     
 </body>
 </html>
