@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulos e Classes</title>
+    <script src="script.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            padding-left: 150px;
+            padding-right: 150px;
+        }
+        h1 {
+            color: #333;
+            display: flex;
+            justify-content: center;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Módulos e Classes</h1>
+    <p>O JavaScript moderno (ES6+) trouxe dois conceitos muito importantes: <strong>módulos</strong> e <strong>classes</strong>.</p>
+    <p><strong>Módulos:</strong> Permitem dividir o código em arquivos menores e reutilizáveis. Cada arquivo pode exportar funções, objetos ou valores, e outros arquivos podem importar esses módulos.</p>
+    <p><strong>Classes:</strong> São uma forma de criar objetos com propriedades e métodos, facilitando a programação orientada a objetos.</p>
+
+    <h2>Exemplo de Módulo</h2>
+    <pre>
+        <code>
+        // arquivo: mathUtils.js
+        export function add(a, b) {
+            return a + b;
+        }
+
+        export function subtract(a, b) {
+            return a - b;
+        }
+        </code>
+    </pre>
+
+    <h2>Exemplo de Classe</h2>
+    <pre>
+        <code>
+        class Person {
+            constructor(name, age) {
+                this.name = name;
+                this.age = age;
+            }
+            //O `constructor` é a função que roda automaticamente quando você cria uma "nova" pessoa a partir desse molde.
+
+            greet() {
+                console.log(`Hello, my name is ${this.name} and I am ${this.age} years old.`);
+            }
+        }
+
+        const john = new Person('John', 30);
+        john.greet();
+        </code>
+    </pre>
+    
+</body>
+</html>

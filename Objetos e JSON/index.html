@@ -10,9 +10,13 @@
             font-family: Arial, sans-serif;
             margin: 20px;
             padding: 20px;
+            padding-left: 150px;
+            padding-right: 150px;
         }
         h1 {
             color: #333;
+            display: flex;
+            justify-content: center;
         }
         pre {
             background-color: #f4f4f4;
@@ -23,15 +27,17 @@
     </style>
 </head>
 <body>
+    
     <h1>Objetos e JSON</h1>
-    <p>O JSON (JavaScript Object Notation) é o formato padrão de comunicação na internet. <br>
+    <p><strong>O JSON (JavaScript Object Notation)</strong> é o formato padrão de comunicação na internet. <br>
     Quando o seu frontend (React) conversa com o seu backend (Node), eles trocam dados no formato JSON.<br>
     Ele parece muito com um objeto JavaScript, mas no fundo é só um texto (string). <br>
     Para fazer essa ponte entre "objeto real no código" e "texto para enviar pela internet", usamos dois métodos essenciais:</p>
     
     <ul>
-        <li>JSON.stringify(): Pega um objeto JavaScript e transforma em uma string JSON (preparando para envio).</li>
-        <li>JSON.parse(): Pega uma string JSON recebida da internet e transforma de volta em um objeto JavaScript (preparando para uso no código).</li>
+        <li><strong>JSON.stringify():</strong> Pega um objeto JavaScript e transforma em uma string JSON (preparando para envio).</li>
+        <br>
+        <li><strong>JSON.parse():</strong> Pega uma string JSON recebida da internet e transforma de volta em um objeto JavaScript (preparando para uso no código).</li>
     </ul>
 
     <pre>
