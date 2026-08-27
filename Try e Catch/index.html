@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Try e Catch</title>
+    <script></script>
+    <style>
+         body {
+            font-family: Arial, sans-serif;
+            margin: 2rem;
+            line-height: 1.6;
+            padding: 0;
+        }
+
+        pre {
+            background: #f4f4f4;
+            padding: 1rem;
+            border-radius: 6px;
+        }
+
+        code {
+            color: #3613d1;
+        }
+
+        ul {
+            list-style-type: disc;
+            padding-left: 1.5rem;
+        }
+
+        h1 {
+            background-color: #f4f4f4;
+            padding: 1rem;
+            border-radius: 6px;
+        }
+
+        h2 {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>Try e Catch</h1>
+    <h2>O que é Try Catch?</h2>
+    <p>Em português, <strong>try</strong> significa "tente" e <strong>catch</strong> significa "capture". Essa estrutura é o grande sistema de segurança do JavaScript para lidar com o imprevisível.</p>
+    <p>Quando você faz uma requisição para a internet (como usando o fetch), muita coisa foge do seu controle: a rede do usuário pode cair, o servidor da API pode desligar para manutenção ou o link pode estar errado. O try/catch serve exatamente para impedir que esses imprevistos destruam o seu aplicativo.</p>
+
+    <h2>Por que ele é importante no dia a dia?</h2>
+
+    <ul>
+        <li>Evita o colapso (Crash): Sem ele, um erro na comunicação com a API faz o JavaScript entrar em pânico e parar de ler o resto do código. Isso geralmente resulta em uma tela em branco para o usuário.</li>
+        <li>Mensagens amigáveis: Ele permite que você assuma o controle da falha e mostre um aviso educado na tela (ex: "Verifique sua conexão com a internet"), em vez de deixar o sistema congelado.</li>
+        <li>Rastreio de bugs: A variável de erro que vai dentro dos parênteses do catch(erro) guarda os detalhes técnicos exatos do que falhou, ajudando você (o desenvolvedor) a consertar o problema rapidamente nos bastidores.</li>
+    </ul>
+
+    <h2>Como funciona na prática?</h2>
+    <p>Pense no try/catch como pedir para um amigo ir à padaria comprar pão:</p>
+    <ul>
+        <li><strong>try:</strong> Você diz "Tente ir lá, pedir o pão e pagar". É o cenário ideal. Se der tudo certo, o código segue normalmente.</li>
+        <li><strong>catch:</strong> Se a padaria estiver fechada ou o pão tiver acabado, em vez de o seu amigo ficar paralisado na calçada sem saber o que fazer, ele entra no "modo de emergência" (o catch), captura o problema e volta para te avisar que deu errado.</li>
+    </ul>
+    <p>Veja a estrutura como fica:</p>
+    <pre>
+        <code>
+            async function carregarProdutos() {
+            try {
+                // O código tenta executar o caminho feliz, linha por linha
+                const resposta = await fetch("https://api-falsa.com/produtos");
+                const produtos = await resposta.json();
+                console.log("Sucesso! Aqui estão os produtos:", produtos);
+                
+            } catch (erro) {
+                // Se QUALQUER linha do 'try' falhar, o JavaScript abandona o 'try' 
+                // e pula imediatamente para cá, salvando o programa.
+                console.log("Ops! Não conseguimos carregar a vitrine agora.");
+                console.error("Detalhes técnicos para o dev:", erro);
+            }
+        }
+        </code>
+    </pre>
+
+    
+
+</body>
+</html>
