@@ -3,10 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Spread Operator</title>
     <script src="script.js"></script>
+    <style>
+         body {
+            font-family: Arial, sans-serif;
+            margin: 2rem;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        pre {
+            background: #f4f4f4;
+            padding: 1rem;
+            border-radius: 6px;
+        }
+
+        code {
+            color: #3613d1;
+        }
+
+        ul {
+            list-style-type: disc;
+            padding-left: 1.5rem;
+        }
+
+        h1 {
+            background-color: #f4f4f4;
+            padding: 1rem;
+            border-radius: 6px;
+        }
+
+        h2 {
+            color: #333;
+        }
+    </style>
 </head>
 <body>
-    
+    <h1>Spread Operator</h1>
+    <p>Lembra do Rest Operator (que pega itens soltos e agrupa num array)? O Spread usa os mesmos três pontinhos (...), mas faz exatamente o inverso: ele pega um array ou objeto fechado e espalha (desempacota) o conteúdo dele em outro lugar.</p>
+
+    <h2>Por que ele é tão famoso? (A regra de ouro do React)</h2>
+    <p>No React, existe uma regra sagrada chamada Imutabilidade. Significa que você nunca deve alterar um dado original diretamente (não podemos fazer array.push() ou objeto.nome = "Novo" para atualizar a tela).</p>
+    <p>Em vez de alterar o original, você deve criar uma cópia exata, mudar o que precisa nessa cópia, e avisar o React: "Olha, essa é a nova versão dos dados". O Spread Operator é a ferramenta perfeita para fazer essas cópias!</p>
+    <p>Vamos ver como ele funciona na prática em Arrays e Objetos:<br>
+        Imagine que você tem uma lista de compras e quer adicionar itens novos, mas sem modificar a lista original.
+    </p>
+    <p>Jeito antigo de fazer:</p>
+    <pre>
+        <code>
+            const frutas = ["Maçã", "Banana"];
+            // O push altera a lista original. O React odeia isso!
+            frutas.push("Laranja");
+        </code>
+    </pre>
+    <p>Com o spread operador</p>
+    <pre>
+        <code>
+            const frutas = ["Maçã", "Banana"];
+
+            // Lemos assim: "Crie um novo array, espalhe tudo o que tem em 'frutas' aqui dentro, e depois adicione 'Laranja'."
+            const novasFrutas = [...frutas, "Laranja"]; 
+
+            console.log(novasFrutas); // ["Maçã", "Banana", "Laranja"]
+            console.log(frutas);      // ["Maçã", "Banana"] (O original continua intacto!)
+        </code>
+    </pre>
+    <p>Você também pode usar para juntar dois arrays facilmente: const misturado = [...array1, ...array2];</p>
+
+    <h2>Spread Operador em Objetos</h2>
+    <p>Essa é a utilidade máxima dele. Você quer copiar um objeto inteiro, mas alterar apenas uma única propriedade dele.</p>
+    <pre>
+        <code>
+            const usuario = {
+            nome: "Carlos",
+            idade: 25,
+            cidade: "São Paulo"
+        };
+
+        // Queremos fazer o aniversário do Carlos (mudar a idade para 26)
+        // Lemos assim: "Crie um novo objeto, espalhe tudo do 'usuario' original, mas sobrescreva a 'idade' com 26."
+        const usuarioAtualizado = {
+            ...usuario,
+            idade: 26 
+        };
+
+        console.log(usuarioAtualizado); 
+        // Resultado: { nome: "Carlos", idade: 26, cidade: "São Paulo" }
+        </code>
+    </pre>
+    <p>O JavaScript é inteligente: se a propriedade idade já existia no objeto espalhado, ele apenas substitui pelo valor novo. O resto (nome e cidade) ele mantém igual.</p>
 </body>
 </html>
