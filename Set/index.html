@@ -3,10 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Set em JavaCript</title>
+    <script src="script.js"></script>
+    <style> </style>
 </head>
 <body>
-    
+    <h1>Set em JavaScript</h1>
+    <h2>O que é SET e JavaScript?</h2>
+    <p>Em resumo, um Set (que traduzimos como "Conjunto") é bem parecido com um Array (uma lista de itens), mas com uma regra de ouro imutável: ele NUNCA aceita valores duplicados.</p>
+    <p>Se você tentar adicionar um valor que já existe lá dentro, o JavaScript simplesmente ignora a sua tentativa, silenciosamente.</p>
+
+    <h2>Como funciona na prática?</h2>
+    <pre>
+        <code>
+            const meuSet = new Set();
+
+            // Adicionando valores
+            meuSet.add("Maçã");
+            meuSet.add("Banana");
+            meuSet.add("Maçã"); // Tentei adicionar Maçã de novo!
+
+            console.log(meuSet); 
+            // Resultado: Set { 'Maçã', 'Banana' } -> Ele ignorou a segunda "Maçã"!
+        </code>
+    </pre>
+
+    <p>Principais métodos do Set (em vez do push e pop dos arrays):</p>
+    <ul>
+        <li>add(valor): Adiciona um item.</li>
+        <li>delete(valor): Remove um item específico (ex: meuSet.delete("Banana")).</li>
+        <li>has(valor): Retorna true ou false se o item existir lá dentro. É muito mais rápido que o includes() do Array.</li>
+        <li>size: Retorna o tamanho do Set (é o equivalente ao length do Array). Ex: meuSet.size.</li>
+    </ul>
+
+    <h2>O "Truque de Mágica" do Set + Spread Operator</h2>
+    <p>Lembra do Spread Operator (...) que você acabou de aprender? Olha que união perfeita:</p>
+
+    <pre>
+        <code>
+            // Temos um array cheio de categorias repetidas vindo do banco de dados
+            const categoriasRepetidas = ["Eletrônicos", "Roupas", "Eletrônicos", "Livros", "Roupas"];
+
+            // 1. Passamos o array para dentro do new Set() -> Ele remove as duplicatas na hora!
+            // 2. Usamos o Spread (...) para espalhar esse Set limpo de volta para dentro de um Array []
+            const categoriasUnicas = [...new Set(categoriasRepetidas)];
+
+            console.log(categoriasUnicas); 
+            // Resultado: ["Eletrônicos", "Roupas", "Livros"]
+        </code>
+    </pre>
+    <p>É a forma mais elegante, moderna e rápida de limpar listas no JavaScript!</p>
 </body>
-<script src="script.js"></script>
+
 </html>

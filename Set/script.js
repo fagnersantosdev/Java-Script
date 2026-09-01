@@ -17,6 +17,18 @@
 //}, 1000);
 
 //*SETTIMEOUT: usado para exercutar a funçao e parar logo após ser executada.*
-setTimeout(() => {
-    document.write("Carregando... <br>");
-}, 2000);
+// setTimeout(() => {
+//     document.write("Carregando... <br>");
+// }, 2000);
+
+//DESAFIO
+// Você está criando um sistema de tags para um blog. O usuário digitou as seguintes tags:
+// const tagsDigitadas = ["javascript", "react", "node", "javascript", "react", "html"];
+
+// Crie uma variável chamada tagsLimpas.
+
+// Use o truque do new Set() junto com o Spread Operator (...) e colchetes ([]) para transformar essa lista cheia de repetições em um novo array apenas com palavras únicas.
+
+// Imprima tagsLimpas no console.
+
+let TagDigitais = [""]

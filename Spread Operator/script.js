@@ -38,4 +38,5 @@ let produto = {
     estoque: 10,
 };
 
-let produtoVendido = {... produto, };
+let produtoVendido = {... produto, estoque:9};
+console.log(produtoVendido);
