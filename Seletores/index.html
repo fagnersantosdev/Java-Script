@@ -46,24 +46,29 @@
     <p>Existem vários métodos para isso, mas hoje em dia, nós focamos nos "Três Grandes":</p>
 
     <ol>
+        <h2>1. document.getElementById()</h2>
         <p>É o seletor mais clássico e rápido. Você usa quando o elemento HTML tem um id único.</p>
-        <ul>
-            <li>No HTML: <pre><code><button id="meu-botao">Clique aqui</button></code></pre></li>
-            <li>No CSS: #meu-botao { color: blue; }</li>
-            <li>No JS: const botao = document.getElementById("meu-botao");</li>
-        </ul>
-        <p>É o seletor mais usado e versátil. Você usa quando o elemento HTML tem uma classe.</p>
-        <ul>
-            <li>No HTML: <pre><code><button class="botao-principal">Clique aqui</button></code></pre></li>
-            <li>No CSS: .botao-principal { color: blue; }</li>
-            <li>No JS: const botaoPrincipal = document.querySelector(".botao-principal");</li>
-        </ul>
-        <p>É o seletor mais genérico. Você usa quando quer selecionar todos os elementos de um tipo específico.</p>
-        <ul>
-            <li>No HTML: <pre><code><h2>Meu Site</h2></code></pre></li>
-            <li>No CSS: h1 { color: blue; }</li>
-            <li>No JS: const titulo = document.querySelector("h1");</li>
-        </ul>
+            <ul>
+                <li>No HTML: <img src="seletores.png"></img></li>
+                <!-- <button id="meu-botao">Clique aqui</button> -->
+                <li>No CSS: #meu-botao { color: blue; }</li>
+                <li>No JS: <strong>const botao = document.getElementById("meu-botao");</strong></li>
+            </ul>
+        <h2>2. document.querySelector() (O mais usado hoje)</h2>
+        <p>Esse é o "canivete suíço" dos seletores. Ele permite buscar um elemento usando a mesma regra que você usa no CSS. Ele vai vasculhar o HTML e retornar apenas o primeiro elemento que encontrar.</p>
+            <ul>
+                <li>No HTML: <img src="seletores2.png"></img></li>
+                <li>No JS: <strong>botao = document.querySelector(".btn-azul");</strong> 
+                (Nota: Aqui você precisa colocar o ponto . para classes ou a hashtag # para IDs, exatamente como no CSS).</li>
+            </ul>
+        <h2>3. document.querySelectorAll()</h2>
+        <p>Funciona igualzinho ao <strong>querySelector</strong>, mas em vez de trazer só o primeiro, ele traz todos os elementos que batem com a busca, organizados em uma lista (chamada de NodeList, que é bem parecida com um Array).</p>
+            <ul>
+                <li>No HTML: <img src="seletores3.png"></img></li>
+                <!-- <li class="item">Maçã</li> <li class="item">Banana</li> -->
+                <li>No JS: <strong>todosItens = document.querySelectorAll(".item");</strong> 
+                (Você pode usar o for...of ou o .forEach() para passar por cada item dessa lista e alterar todos de uma vez).</li>
+            </ul>
     </ol>
 </body>
 </html>
