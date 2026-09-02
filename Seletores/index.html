@@ -5,24 +5,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Seletores IMC</title>
     <script src="script.js"></script>
+    <style>
+         body {
+            font-family: Arial, sans-serif;
+            margin: 2rem;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        pre {
+            background: #f4f4f4;
+            padding: 1rem;
+            border-radius: 6px;
+        }
+
+        code {
+            color: #3613d1;
+        }
+
+        ul {
+            list-style-type: disc;
+            padding-left: 1.5rem;
+        }
+
+        h1 {
+            background-color: #f4f4f4;
+            padding: 1rem;
+            border-radius: 6px;
+        }
+
+        h2 {
+            color: #333;
+        }
+    </style>
 </head>
 <body>
-    <div class="colegas_de_classe">
-        <ul class="terceiro_ano">
-            <li class="amigo">João</li>
-            <li class="conhecido">Lucas</li>
-            <li class="amigo">Pedro</li>
-            <li class="conhecido">Marcos</li>
-            <li class="amigo">Matheus</li>
+    <h1>O que são seletores?</h1>
+    <p>No JavaScript puro (Vanilla JS), se você quer mudar a cor de um botão, trocar um texto ou fazer algo acontecer quando o usuário clica em algum lugar, você precisa primeiro "pesgar" (selecionar) esse elemento lá do HTML e trazer para dentro do JavaScript.</p>
+
+    <p>Existem vários métodos para isso, mas hoje em dia, nós focamos nos "Três Grandes":</p>
+
+    <ol>
+        <p>É o seletor mais clássico e rápido. Você usa quando o elemento HTML tem um id único.</p>
+        <ul>
+            <li>No HTML: <pre><code><button id="meu-botao">Clique aqui</button></code></pre></li>
+            <li>No CSS: #meu-botao { color: blue; }</li>
+            <li>No JS: const botao = document.getElementById("meu-botao");</li>
         </ul>
-    </div>
-
-    <div id="frase_motivacional" class="conteudo">
-        <p id="frase_do_dia">Comece acreditando que é possível!</p>
-    </div>
-
-    <div id="nome-formulario" class="conteudo">
-        <input type="text" name="nome">
-    </div>
+        <p>É o seletor mais usado e versátil. Você usa quando o elemento HTML tem uma classe.</p>
+        <ul>
+            <li>No HTML: <pre><code><button class="botao-principal">Clique aqui</button></code></pre></li>
+            <li>No CSS: .botao-principal { color: blue; }</li>
+            <li>No JS: const botaoPrincipal = document.querySelector(".botao-principal");</li>
+        </ul>
+        <p>É o seletor mais genérico. Você usa quando quer selecionar todos os elementos de um tipo específico.</p>
+        <ul>
+            <li>No HTML: <pre><code><h2>Meu Site</h2></code></pre></li>
+            <li>No CSS: h1 { color: blue; }</li>
+            <li>No JS: const titulo = document.querySelector("h1");</li>
+        </ul>
+    </ol>
 </body>
 </html>

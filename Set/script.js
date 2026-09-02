@@ -31,4 +31,6 @@
 
 // Imprima tagsLimpas no console.
 
-let TagDigitais = [""]
+let TagDigitais = ["javascript", "react", "node", "javascript", "react", "html"];
+let tagsLimpas = [...new Set(TagDigitais)];
+console.log(tagsLimpas);

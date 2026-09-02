@@ -5,12 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Set em JavaCript</title>
     <script src="script.js"></script>
-    <style> </style>
+    <style>
+         body {
+            font-family: Arial, sans-serif;
+            margin: 2rem;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        pre {
+            background: #f4f4f4;
+            padding: 1rem;
+            border-radius: 6px;
+        }
+
+        code {
+            color: #3613d1;
+        }
+
+        ul {
+            list-style-type: disc;
+            padding-left: 1.5rem;
+        }
+
+        h1 {
+            background-color: #f4f4f4;
+            padding: 1rem;
+            border-radius: 6px;
+        }
+
+        h2 {
+            color: #333;
+        }
+    </style>
 </head>
 <body>
     <h1>Set em JavaScript</h1>
     <h2>O que é SET e JavaScript?</h2>
-    <p>Em resumo, um Set (que traduzimos como "Conjunto") é bem parecido com um Array (uma lista de itens), mas com uma regra de ouro imutável: ele NUNCA aceita valores duplicados.</p>
+    <p>Em resumo, um Set (que traduzimos como "Conjunto") é bem parecido com um Array (uma lista de itens), mas com uma regra de ouro imutável: ele <strong>nunca</strong> aceita valores duplicados.</p>
     <p>Se você tentar adicionar um valor que já existe lá dentro, o JavaScript simplesmente ignora a sua tentativa, silenciosamente.</p>
 
     <h2>Como funciona na prática?</h2>
@@ -30,14 +62,14 @@
 
     <p>Principais métodos do Set (em vez do push e pop dos arrays):</p>
     <ul>
-        <li>add(valor): Adiciona um item.</li>
-        <li>delete(valor): Remove um item específico (ex: meuSet.delete("Banana")).</li>
-        <li>has(valor): Retorna true ou false se o item existir lá dentro. É muito mais rápido que o includes() do Array.</li>
-        <li>size: Retorna o tamanho do Set (é o equivalente ao length do Array). Ex: meuSet.size.</li>
+        <li><strong>add(valor)</strong>: Adiciona um item.</li>
+        <li><strong>delete(valor)</strong>: Remove um item específico (ex: meuSet.delete("Banana")).</li>
+        <li><strong>has(valor)</strong>: Retorna true ou false se o item existir lá dentro. É muito mais rápido que o includes() do Array.</li>
+        <li><strong>size</strong>: Retorna o tamanho do Set (é o equivalente ao length do Array). Ex: meuSet.size.</li>
     </ul>
 
     <h2>O "Truque de Mágica" do Set + Spread Operator</h2>
-    <p>Lembra do Spread Operator (...) que você acabou de aprender? Olha que união perfeita:</p>
+    <p>Lembra do Spread Operator (...)? Olha que união perfeita:</p>
 
     <pre>
         <code>
