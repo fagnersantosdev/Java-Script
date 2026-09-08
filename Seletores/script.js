@@ -1,11 +1,10 @@
-let frase = document.getElementById("frase_do_dia");
 
-const amigos = document.getElementByIdClassName("amigo");
-const conhecido = document.getElementByIdClassName("conhecido");
 
-let nomeUsuario = document.getElementByIdTagName("nome");
+// Selecionar o <h2> usando o seu ID e guardar numa variável chamada subtitulo.
 
-let terceiroAno = document.querySelector(".terceiroAno");
-let paragrafo= document.querySelector("p");
-let frase_do_dia= document.querySelector("div#frase_otivacional p#frase_do_dia");
-let conteudos= document.querySelector("conteudo");
+// Selecionar apenas o primeiro <div class="card-produto"> (Celular) usando querySelector e guardar numa variável chamada primeiroProduto.
+
+// Selecionar todos os produtos de uma vez usando querySelectorAll e guardar numa variável chamada listaDeProdutos.
+
+
+const listaDeProdutos = document.querySelectorAll(".card-produtos");
