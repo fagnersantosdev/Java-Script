@@ -6,5 +6,6 @@
 
 // Selecionar todos os produtos de uma vez usando querySelectorAll e guardar numa variável chamada listaDeProdutos.
 
-
+const subtitulo = document.getElementById("subtitulo");
+const primeiroProduto = document.querySelector(".card-produto");
 const listaDeProdutos = document.querySelectorAll(".card-produtos");
