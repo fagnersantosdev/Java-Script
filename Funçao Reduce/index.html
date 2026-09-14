@@ -5,9 +5,82 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Função Reduce</title>
     <script src="script.js"></script>
+    <style>
+         body {
+            font-family: Arial, sans-serif;
+            margin: 2rem;
+            line-height: 1.6;
+            padding: 50px;
+        }
+
+        pre {
+            background: #f4f4f4;
+            padding: 1rem;
+            border-radius: 6px;
+            font-size: 1rem;
+        }
+
+        code {
+            color: #3613d1;
+        }
+
+        ul {
+            list-style-type: disc;
+            padding-left: 1.5rem;
+        }
+
+        h1 {
+            background-color: #f4f4f4;
+            padding: 1rem;
+            border-radius: 6px;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        h3 {
+            color: #333;
+        }
+    </style>
 </head>
 <body>
     <h1>Função Reduce</h1>
+
     <h2>O que o Reduce faz?</h2>
+
+    <p>Enquanto o map devolve um array do mesmo tamanho, e o filter devolve um array menor, o reduce serve para reduzir uma lista inteira a um ÚNICO valor.</p>
+    <p>Esse "único valor" pode ser a soma de todos os números, uma string gigante juntando tudo, ou até um objeto novo. O uso mais clássico (e o mais fácil para entender) é o carrinho de compras: você tem uma lista de preços e quer reduzi-la ao valor total que o cliente vai pagar.</p>
+
+    <h2>A anatomia do Reduce</h2>
+    <p>Para ele funcionar, ele precisa de dois ingredientes principais:</p>
+    <ol>
+        <li><strong>Callback Function:</strong> Que recebe um Acumulador (a "caixa" onde o resultado vai se acumulando) e o Item Atual (o elemento da lista que ele está lendo naquela hora).</li>
+        <li><strong>Valor Inicial:</strong> O número (ou objeto/array) com o qual o acumulador vai começar.</li>
+    </ol>
+
+    <p>Veja na prática:</p>
+
+    <pre>
+        <code>
+            const precos = [10, 20, 30];
+
+            // O "0" lá no final é o valorInicial. O 'acumulador' começa valendo 0.
+            const total = precos.reduce((acumulador, precoAtual) => {
+                return acumulador + precoAtual;
+            }, 0);
+
+            console.log(total); // Resultado: 60
+        </code>
+    </pre>
+
+    <h3>O passo a passo invisível que ele faz:</h3>
+    <pre>
+        <code>
+            // Rodada 1: acumulador = 0, precoAtual = 10 => acumulador + precoAtual = 10
+            // Rodada 2: acumulador = 10, precoAtual = 20 => acumulador + precoAtual = 30
+            // Rodada 3: acumulador = 30, precoAtual = 30 => acumulador + precoAtual = 60
+        </code>
+    </pre>
 </body>
 </html>

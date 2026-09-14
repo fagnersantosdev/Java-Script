@@ -4,9 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formatação de datas</title>
-    <script src=""></script>
+    <script src="script.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 2rem;
+            line-height: 1.6;
+            padding: 50px;
+        }
+
+        pre {
+            background: #f4f4f4;
+            padding: 1rem;
+            border-radius: 6px;
+            font-size: 1rem;
+        }
+
+        code {
+            color: #3613d1;
+        }
+
+        ul {
+            list-style-type: disc;
+            padding-left: 1.5rem;
+        }
+
+        h1 {
+            background-color: #f4f4f4;
+            padding: 1rem;
+            border-radius: 6px;
+        }
+
+        h2 {
+            color: #333;
+        }
+    </style>
 </head>
 <body>
     <h1>Datas</h1>
+    <p>O objeto <code>Date</code> em JavaScript é usado para trabalhar com datas e horas. Ele fornece métodos para criar, manipular e formatar datas.</p>
+    <h2>Exemplo de criação de uma data</h2>
+    <pre>
+        <code>
+            const data = new Date();
+            console.log(data);
+        </code>
+    </pre>
+
+    <p>No exemplo acima, estamos criando uma nova instância do objeto <code>Date</code> e imprimindo-a no console.</p>
 </body>
 </html>

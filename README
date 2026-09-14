@@ -1,0 +1,43 @@
+# 🚀 Trilha de Estudos: Fundamentos de JavaScript
+
+Este repositório contém uma série de exercícios práticos e resumos dos principais conceitos de JavaScript moderno (ES6+). O objetivo destes códigos é construir uma base sólida para o desenvolvimento Full Stack, preparando o terreno para estudos avançados em **Node.js** e **React**.
+
+## 🗂️ Tópicos Abordados
+
+Abaixo estão as categorias e os conceitos práticos implementados neste repositório:
+
+### 🧱 Fundamentos da Linguagem
+* **Variáveis e Tipos de Dados:** Entendendo `let`, `const`, escopo e tipos primitivos.
+* **Controle de Fluxo:** Estruturas de repetição (`For e While`) e condicionais (`Switch`).
+* **Tratamento de Erros:** Protegendo a aplicação com `Try e Catch`.
+* **Prática:** Aplicação de `Calculo IMC` e `Formatação de datas`.
+
+### ⚡ Funções e Novidades do ES6+
+* **Funções e Arrow function:** Sintaxe moderna e retorno implícito.
+* **Template String:** Interpolação de variáveis de forma limpa.
+* **Default Parameters:** Definindo valores padrão para evitar erros (undefined).
+* **Rest e Spread Operator:** Agrupando e espalhando dados de forma imutável.
+
+### 📦 Estruturas de Dados e Objetos
+* **Objetos e JSON:** Manipulação de chaves, valores e conversão de dados.
+* **Destructuring:** Desconstruindo um Array e Desconstruindo Objeto para extrair dados rapidamente.
+* **Set:** Criando listas com valores únicos e removendo duplicatas.
+* **Manipulação de String e Arrays:** Limpeza e formatação de dados brutos.
+
+### 🔄 Métodos Avançados de Array
+O "quarteto fantástico" da manipulação de listas no React:
+* **Função Map:** Transformando dados.
+* **Função Filter:** Filtrando informações.
+* **Função Find:** Buscando elementos específicos.
+* **Função Reduce:** Reduzindo listas a um único valor agregado.
+
+### 🌐 Assincronismo e Arquitetura
+* **Funções Assíncronas:** Consumo de APIs utilizando `async / await` e `fetch`.
+* **Módulos e Classes:** Orientação a objetos e divisão de código com `import / export`.
+* **DOM:** Captura de elementos da tela com `Seletores`.
+
+## 🛠️ Como rodar o projeto
+Para testar os códigos, você pode clonar este repositório e executar os arquivos individualmente utilizando o [Node.js](https://nodejs.org/):
+
+```bash
+node "nome-da-pasta/nome-do-arquivo.js"
